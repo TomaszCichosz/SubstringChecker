@@ -27,13 +27,11 @@ public class Main {
 
     private static boolean isSubstring(String stringToCheck, String substring) {
         if (stringToCheck.length() >= substring.length()) {
-            String[] stringToCheckElements = stringToCheck.split("");
-            String[] substringElements = substring.split("");
-            int substringElementsIndex = 0;
-            for (String stringToCheckElement : stringToCheckElements) {
-                if (stringToCheckElement.equals(substringElements[substringElementsIndex])) {
-                    if (substringElementsIndex < substringElements.length - 1) {
-                        substringElementsIndex++;
+            int substringIndex = 0;
+            for (int i = 0; i < stringToCheck.length(); i++) {
+                if (stringToCheck.charAt(i) == substring.charAt(substringIndex)) {
+                    if (substringIndex < substring.length() - 1) {
+                        substringIndex++;
                     } else {
                         return true;
                     }
