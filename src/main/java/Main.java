@@ -16,16 +16,12 @@ public class Main {
         for (int i = 0; i < t; i++) {
             line = reader.readLine();
             lineElements = line.split("\\s");
-            if (isSubstring(lineElements[0], lineElements[1])) {
-                writer.println("Tak");
-            } else {
-                writer.println("Nie");
-            }
+            writer.println(substringCheckResult(lineElements[0], lineElements[1]));
         }
         writer.close();
     }
 
-    private static boolean isSubstring(String stringToCheck, String substring) {
+    private static String substringCheckResult(String stringToCheck, String substring) {
         if (stringToCheck.length() >= substring.length()) {
             int substringIndex = 0;
             int substringLength = substring.length() - 1;
@@ -34,11 +30,11 @@ public class Main {
                     if (substringIndex < substringLength) {
                         substringIndex++;
                     } else {
-                        return true;
+                        return "Tak";
                     }
                 }
             }
         }
-        return false;
+        return "Nie";
     }
 }
