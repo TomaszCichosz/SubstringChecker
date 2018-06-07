@@ -19,12 +19,12 @@ public class Main {
             no = true;
             line = reader.readLine();
             lineElements = line.split("\\s");
-            stringToCheck = lineElements[0];
-            substring = lineElements[1];
-            String[] stringToCheckElements = stringToCheck.split("");
-            String[] substringElements = substring.split("");
-            substringElementsIndex = 0;
-            if (stringToCheck.length() >= substring.length()) {
+            if (lineElements[0].length() >= lineElements[1].length()) {
+                stringToCheck = lineElements[0];
+                substring = lineElements[1];
+                substringElementsIndex = 0;
+                String[] stringToCheckElements = stringToCheck.split("");
+                String[] substringElements = substring.split("");
                 for (int j = 0; j < stringToCheckElements.length; j++) {
                     if (stringToCheckElements[j].equals(substringElements[substringElementsIndex])) {
                         if (substringElementsIndex < substringElements.length - 1) {
