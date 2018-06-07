@@ -24,14 +24,16 @@ public class Main {
             String[] stringToCheckElements = stringToCheck.split("");
             String[] substringElements = substring.split("");
             substringElementsIndex = 0;
-            for (int j = 0; j < stringToCheckElements.length; j++) {
-                if (stringToCheckElements[j].equals(substringElements[substringElementsIndex])) {
-                    if (substringElementsIndex < substringElements.length - 1) {
-                        substringElementsIndex++;
-                    } else {
-                        writer.println("Tak");
-                        no = false;
-                        j = stringToCheckElements.length;
+            if (stringToCheck.length() >= substring.length()) {
+                for (int j = 0; j < stringToCheckElements.length; j++) {
+                    if (stringToCheckElements[j].equals(substringElements[substringElementsIndex])) {
+                        if (substringElementsIndex < substringElements.length - 1) {
+                            substringElementsIndex++;
+                        } else {
+                            writer.println("Tak");
+                            no = false;
+                            j = stringToCheckElements.length;
+                        }
                     }
                 }
             }
