@@ -28,9 +28,10 @@ public class Main {
     private static boolean isSubstring(String stringToCheck, String substring) {
         if (stringToCheck.length() >= substring.length()) {
             int substringIndex = 0;
+            int substringLength = substring.length() - 1;
             for (int i = 0; i < stringToCheck.length(); i++) {
                 if (stringToCheck.charAt(i) == substring.charAt(substringIndex)) {
-                    if (substringIndex < substring.length() - 1) {
+                    if (substringIndex < substringLength) {
                         substringIndex++;
                     } else {
                         return true;
