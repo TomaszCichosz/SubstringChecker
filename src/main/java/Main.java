@@ -16,7 +16,7 @@ public class Main {
         for (int i = 0; i < t; i++) {
             line = reader.readLine();
             lineElements = line.split("\\s");
-            if (substringCheck(lineElements[0], lineElements[1])) {
+            if (isSubstring(lineElements[0], lineElements[1])) {
                 writer.println("Tak");
             } else {
                 writer.println("Nie");
@@ -25,7 +25,7 @@ public class Main {
         writer.close();
     }
 
-    private static boolean substringCheck(String stringToCheck, String substring) {
+    private static boolean isSubstring(String stringToCheck, String substring) {
         if (stringToCheck.length() >= substring.length()) {
             String[] stringToCheckElements = stringToCheck.split("");
             String[] substringElements = substring.split("");
